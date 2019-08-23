@@ -7,22 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0957412230DE6B700743BCF /* NewNoteFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957411230DE6B700743BCF /* NewNoteFormView.swift */; };
+		A0957412230DE6B700743BCF /* NewNoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957411230DE6B700743BCF /* NewNoteForm.swift */; };
 		A0957414230E8BAF00743BCF /* HomeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957413230E8BAF00743BCF /* HomeNavBar.swift */; };
 		A0957416230E8CB300743BCF /* NoteNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957415230E8CB300743BCF /* NoteNavBar.swift */; };
 		A0957419230E8D1700743BCF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957418230E8D1700743BCF /* UIViewExtension.swift */; };
 		A095741B230E8FCA00743BCF /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095741A230E8FCA00743BCF /* UIViewControllerExtension.swift */; };
-		A095741D230E919F00743BCF /* NewNoteFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095741C230E919F00743BCF /* NewNoteFormController.swift */; };
+		A095741D230E919F00743BCF /* NoteFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095741C230E919F00743BCF /* NoteFormController.swift */; };
 		A095741F230E91A900743BCF /* NoteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A095741E230E91A900743BCF /* NoteController.swift */; };
 		A0957422230E91CE00743BCF /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957421230E91CE00743BCF /* Note.swift */; };
 		A0957424230EAB4D00743BCF /* UIColorEntension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957423230EAB4D00743BCF /* UIColorEntension.swift */; };
 		A0BA1E44230C9EFF00F32F53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E43230C9EFF00F32F53 /* AppDelegate.swift */; };
-		A0BA1E46230C9EFF00F32F53 /* NotesHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E45230C9EFF00F32F53 /* NotesHome.swift */; };
+		A0BA1E46230C9EFF00F32F53 /* NotesHomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E45230C9EFF00F32F53 /* NotesHomeController.swift */; };
 		A0BA1E4B230C9F0100F32F53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0BA1E4A230C9F0100F32F53 /* Assets.xcassets */; };
 		A0BA1E59230C9F0100F32F53 /* add_remove_tableView_cellsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E58230C9F0100F32F53 /* add_remove_tableView_cellsTests.swift */; };
 		A0BA1E64230C9F0100F32F53 /* add_remove_tableView_cellsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E63230C9F0100F32F53 /* add_remove_tableView_cellsUITests.swift */; };
 		A0BA1E74230CA22C00F32F53 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E73230CA22C00F32F53 /* CustomCell.swift */; };
-		A0BA1E76230CA9A300F32F53 /* AddCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E75230CA9A300F32F53 /* AddCellView.swift */; };
+		A0BA1E76230CA9A300F32F53 /* AddCellHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA1E75230CA9A300F32F53 /* AddCellHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,18 +43,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A0957411230DE6B700743BCF /* NewNoteFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteFormView.swift; sourceTree = "<group>"; };
+		A0957411230DE6B700743BCF /* NewNoteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteForm.swift; sourceTree = "<group>"; };
 		A0957413230E8BAF00743BCF /* HomeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBar.swift; sourceTree = "<group>"; };
 		A0957415230E8CB300743BCF /* NoteNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNavBar.swift; sourceTree = "<group>"; };
 		A0957418230E8D1700743BCF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		A095741A230E8FCA00743BCF /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		A095741C230E919F00743BCF /* NewNoteFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteFormController.swift; sourceTree = "<group>"; };
+		A095741C230E919F00743BCF /* NoteFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteFormController.swift; sourceTree = "<group>"; };
 		A095741E230E91A900743BCF /* NoteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteController.swift; sourceTree = "<group>"; };
 		A0957421230E91CE00743BCF /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		A0957423230EAB4D00743BCF /* UIColorEntension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorEntension.swift; sourceTree = "<group>"; };
 		A0BA1E40230C9EFF00F32F53 /* add_remove_tableView_cells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = add_remove_tableView_cells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0BA1E43230C9EFF00F32F53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0BA1E45230C9EFF00F32F53 /* NotesHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesHome.swift; sourceTree = "<group>"; };
+		A0BA1E45230C9EFF00F32F53 /* NotesHomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesHomeController.swift; sourceTree = "<group>"; };
 		A0BA1E4A230C9F0100F32F53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0BA1E4F230C9F0100F32F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BA1E54230C9F0100F32F53 /* add_remove_tableView_cellsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = add_remove_tableView_cellsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +64,7 @@
 		A0BA1E63230C9F0100F32F53 /* add_remove_tableView_cellsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = add_remove_tableView_cellsUITests.swift; sourceTree = "<group>"; };
 		A0BA1E65230C9F0100F32F53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0BA1E73230CA22C00F32F53 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
-		A0BA1E75230CA9A300F32F53 /* AddCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCellView.swift; sourceTree = "<group>"; };
+		A0BA1E75230CA9A300F32F53 /* AddCellHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCellHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,8 +165,8 @@
 		A0BA1E71230CA0CD00F32F53 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A0BA1E45230C9EFF00F32F53 /* NotesHome.swift */,
-				A095741C230E919F00743BCF /* NewNoteFormController.swift */,
+				A0BA1E45230C9EFF00F32F53 /* NotesHomeController.swift */,
+				A095741C230E919F00743BCF /* NoteFormController.swift */,
 				A095741E230E91A900743BCF /* NoteController.swift */,
 			);
 			path = Controllers;
@@ -176,8 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				A0BA1E73230CA22C00F32F53 /* CustomCell.swift */,
-				A0BA1E75230CA9A300F32F53 /* AddCellView.swift */,
-				A0957411230DE6B700743BCF /* NewNoteFormView.swift */,
+				A0BA1E75230CA9A300F32F53 /* AddCellHeader.swift */,
+				A0957411230DE6B700743BCF /* NewNoteForm.swift */,
 				A0957413230E8BAF00743BCF /* HomeNavBar.swift */,
 				A0957415230E8CB300743BCF /* NoteNavBar.swift */,
 			);
@@ -313,13 +313,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A095741D230E919F00743BCF /* NewNoteFormController.swift in Sources */,
+				A095741D230E919F00743BCF /* NoteFormController.swift in Sources */,
 				A0957414230E8BAF00743BCF /* HomeNavBar.swift in Sources */,
-				A0BA1E76230CA9A300F32F53 /* AddCellView.swift in Sources */,
+				A0BA1E76230CA9A300F32F53 /* AddCellHeader.swift in Sources */,
 				A095741B230E8FCA00743BCF /* UIViewControllerExtension.swift in Sources */,
-				A0957412230DE6B700743BCF /* NewNoteFormView.swift in Sources */,
+				A0957412230DE6B700743BCF /* NewNoteForm.swift in Sources */,
 				A0957424230EAB4D00743BCF /* UIColorEntension.swift in Sources */,
-				A0BA1E46230C9EFF00F32F53 /* NotesHome.swift in Sources */,
+				A0BA1E46230C9EFF00F32F53 /* NotesHomeController.swift in Sources */,
 				A095741F230E91A900743BCF /* NoteController.swift in Sources */,
 				A0957416230E8CB300743BCF /* NoteNavBar.swift in Sources */,
 				A0BA1E74230CA22C00F32F53 /* CustomCell.swift in Sources */,

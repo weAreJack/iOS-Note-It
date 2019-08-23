@@ -8,24 +8,23 @@
 
 import UIKit
 
-class NewNoteFormView : UIView {
+class NewNoteForm : UIView, UITextFieldDelegate {
     
     // MARK: - Properties
     
-    fileprivate let topLabel : UIView = {
+    fileprivate let headerLabel = UILabel()
+    fileprivate lazy var topLabel : UIView = {
         
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .darkGray
         
-        let titleLabel = UILabel()
-        titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.text = "Add New Note"
-        titleLabel.textColor = .white
+        headerLabel.translatesAutoresizingMaskIntoConstraints = false
+        headerLabel.textColor = .white
         
-        view.addSubview(titleLabel)
-        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        view.addSubview(headerLabel)
+        headerLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        headerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         
         return view
     }()
@@ -42,16 +41,18 @@ class NewNoteFormView : UIView {
         return label
     }()
     
-    let titleField : UITextField = {
+    lazy var titleField : UITextField = {
         let field = UITextField()
         field.placeholder = "'Shopping List'"
+        field.delegate = self
         field.translatesAutoresizingMaskIntoConstraints = false
         return field
     }()
     
-    let descriptionField : UITextField = {
+    lazy var descriptionField : UITextField = {
         let field = UITextField()
         field.placeholder = "'Christmas presents and food!'"
+        field.delegate = self
         field.translatesAutoresizingMaskIntoConstraints = false
         return field
     }()
@@ -65,8 +66,11 @@ class NewNoteFormView : UIView {
     
     // MARK: - Init
     
-    override init(frame: CGRect) {
+    init(headerText: String, buttonText: String) {
+        let frame = CGRect()
         super.init(frame: frame)
+        headerLabel.text = headerText
+        addNoteButton.setTitle(buttonText, for: .normal)
         setupUI()
     }
     
@@ -74,6 +78,16 @@ class NewNoteFormView : UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - UITextField Delegate Methods
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentCharacterCount = textField.text?.count ?? 0
+        if range.length + range.location > currentCharacterCount {
+            return false
+        }
+        let newLength = currentCharacterCount + string.count - range.length
+        return newLength <= 28
+    }
     
     // MARK: - Handlers
     
@@ -82,9 +96,9 @@ class NewNoteFormView : UIView {
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = UIColor(r: 240, g: 240, b: 240)
         clipsToBounds = true
-        layer.cornerRadius = 2
-        layer.borderColor = UIColor.lightGray.cgColor
-        layer.borderWidth = 1
+        layer.cornerRadius = 10
+        layer.borderColor = UIColor.darkGray.cgColor
+        layer.borderWidth = 2
         
         let titleFieldView = UIView()
         titleFieldView.backgroundColor = .white

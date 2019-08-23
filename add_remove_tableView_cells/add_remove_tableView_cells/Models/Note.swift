@@ -11,5 +11,6 @@ struct Note {
     var title : String?
     var description : String?
     var content : String?
+    var noteIndex : Int
     
 }

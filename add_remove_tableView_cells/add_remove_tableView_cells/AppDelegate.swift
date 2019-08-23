@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = self.window else { fatalError("No Window") }
-        window.rootViewController = UINavigationController(rootViewController: NotesHome())
+        window.rootViewController = UINavigationController(rootViewController: NotesHomeController())
         window.makeKeyAndVisible()
         
         return true
