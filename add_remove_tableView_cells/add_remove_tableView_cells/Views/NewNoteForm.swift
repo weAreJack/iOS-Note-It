@@ -17,10 +17,14 @@ class NewNoteForm : UIView, UITextFieldDelegate {
         
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .darkGray
+        view.backgroundColor = .colour1
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 10
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
-        headerLabel.textColor = .white
+        headerLabel.textColor = .colour2
+        headerLabel.font = .systemFont(ofSize: 18)
         
         view.addSubview(headerLabel)
         headerLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -60,7 +64,7 @@ class NewNoteForm : UIView, UITextFieldDelegate {
     let addNoteButton : UIButton = {
         let button = UIButton()
         button.setTitle("Done", for: .normal)
-        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.colour5, for: .normal)
         return button
     }()
     
@@ -93,11 +97,12 @@ class NewNoteForm : UIView, UITextFieldDelegate {
     fileprivate func setupUI() {
         
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = UIColor(r: 240, g: 240, b: 240)
+        backgroundColor = .colour2
         clipsToBounds = true
         layer.cornerRadius = 10
-        layer.borderColor = UIColor(r: 240, g: 240, b: 240).cgColor
+        layer.borderColor = UIColor.colour1.cgColor
         layer.borderWidth = 2
+        dropShadow()
         
         let titleFieldView = UIView()
         titleFieldView.backgroundColor = .white
@@ -153,7 +158,6 @@ class NewNoteForm : UIView, UITextFieldDelegate {
         addNoteButton.translatesAutoresizingMaskIntoConstraints = false
         addNoteButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
         addNoteButton.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
         
     }
     

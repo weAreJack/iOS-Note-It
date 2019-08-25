@@ -12,11 +12,10 @@ class AddCellHeader : UIView {
     
     // MARK: - Properties
     
-    let icon = UIImageView(image: #imageLiteral(resourceName: "notes").withRenderingMode(.alwaysTemplate))
     let button : UIButton = {
         let button = UIButton()
         button.setTitle("Add New Note", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.colour2, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 18)
         return button
     }()
@@ -36,20 +35,12 @@ class AddCellHeader : UIView {
     
     func setupUI() {
         
-        backgroundColor = .darkGray
+        backgroundColor = .colour1
         
-        icon.tintColor = .white
-        icon.translatesAutoresizingMaskIntoConstraints = false
-        icon.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        icon.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        
-        let stackView = UIStackView(arrangedSubviews: [icon, button])
-        stackView.spacing = 8
-        
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        addSubview(button)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        button.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
     }
     

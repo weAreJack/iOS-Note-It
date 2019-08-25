@@ -24,7 +24,7 @@ class Customcell : UITableViewCell {
     let descriptionLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
-        label.textColor = .gray
+        label.textColor = .colour1
         return label
     }()
     
@@ -58,7 +58,7 @@ class Customcell : UITableViewCell {
         toolTip.widthAnchor.constraint(equalToConstant: 30).isActive = true
         toolTip.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
         toolTip.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        toolTip.tintColor = .darkGray
+        toolTip.tintColor = .colour1
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.topAnchor.constraint(equalTo: topAnchor, constant: 16).isActive = true
@@ -70,7 +70,7 @@ class Customcell : UITableViewCell {
         arrowImage.widthAnchor.constraint(equalToConstant: 25).isActive = true
         arrowImage.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         arrowImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        arrowImage.tintColor = .darkGray
+        arrowImage.tintColor = .colour5
         
     }
 }

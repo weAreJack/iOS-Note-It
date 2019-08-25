@@ -77,8 +77,8 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! Customcell
-            cell.titleLabel.text = notes[indexPath.row].title
-            cell.descriptionLabel.text = notes[indexPath.row].subTitle
+        cell.titleLabel.text = notes[indexPath.row].title
+        cell.descriptionLabel.text = notes[indexPath.row].subTitle
         return cell
     }
     
@@ -143,7 +143,7 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc fileprivate func handlePresentForm() {
         
         let controller = NoteFormController()
-        let form = NewNoteForm(headerText: "Add New Note")
+        let form = NewNoteForm(headerText: "New Note")
         controller.form = form
         controller.delegate = self
         controller.note = Note(title: nil, subTitle: nil, content: nil, noteIndex: notes.count)

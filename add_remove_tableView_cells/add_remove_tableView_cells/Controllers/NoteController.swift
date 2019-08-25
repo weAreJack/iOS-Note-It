@@ -73,7 +73,7 @@ class NoteController : UIViewController, UITextViewDelegate {
         view.addSubview(navBar)
         
         contentTextView.translatesAutoresizingMaskIntoConstraints = false
-        contentTextView.backgroundColor = UIColor(r: 242, g: 238, b: 203)
+        contentTextView.backgroundColor = UIColor(r: 245, g: 242, b: 210)
         contentTextView.clipsToBounds = true
         contentTextView.layer.cornerRadius = 10
         contentTextView.textColor = .darkGray
@@ -146,8 +146,8 @@ class NoteController : UIViewController, UITextViewDelegate {
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        contentTextViewBottomConstraint?.isActive = true
         contentTextViewKeyboardConstraint?.isActive = false
+        contentTextViewBottomConstraint?.isActive = true
         UIView.animate(withDuration: 0.5) {
             self.view.layoutIfNeeded()
         }

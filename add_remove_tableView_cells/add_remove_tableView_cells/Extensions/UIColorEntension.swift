@@ -10,11 +10,11 @@ import UIKit
 
 extension UIColor {
     
-    static let colour1 = UIColor(r: 51, g: 101, b: 138)
-    static let colour2 = UIColor(r: 242, g: 100, b: 25)
-    static let colour3 = UIColor(r: 47, g: 72, b: 88)
-    static let colour4 = UIColor(r: 245, g: 183, b: 0)
-    static let colour5 = UIColor(r: 19, g: 22, b: 22)
+    static let colour1 = UIColor(r: 80, g: 71, b: 70)
+    static let colour2 = UIColor(r: 252, g: 247, b: 248)
+    static let colour3 = UIColor(r: 206, g: 211, b: 220)
+    static let colour4 = UIColor(r: 171, g: 168, b: 195)
+    static let colour5 = UIColor(r: 39, g: 93, b: 173)
     
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat) {
         self.init(red: r/255, green: g/255, blue: b/255, alpha: 1)

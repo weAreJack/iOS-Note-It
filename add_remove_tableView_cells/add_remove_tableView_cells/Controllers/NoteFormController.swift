@@ -70,6 +70,9 @@ class NoteFormController : UIViewController {
     @objc fileprivate func handleSubmitForm() {
         form.titleField.resignFirstResponder()
         form.descriptionField.resignFirstResponder()
+        if note.title == nil {
+            note.title = "New Note"
+        }
         dismiss(animated: true) {
             self.delegate?.newEditNote(newNote: self.note)
         }

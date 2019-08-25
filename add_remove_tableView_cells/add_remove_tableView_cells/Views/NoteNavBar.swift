@@ -41,8 +41,10 @@ class NoteNavBar: UIView {
         stackView.spacing = 8
         
         noteTitleLabel.font = .boldSystemFont(ofSize: 20)
+        noteTitleLabel.textColor = .colour1
         noteTitleLabel.textAlignment = .center
         noteDescriptionLabel.font = .systemFont(ofSize: 16)
+        noteDescriptionLabel.textColor = .colour1
         noteDescriptionLabel.textAlignment = .center
         
         addSubview(stackView)
@@ -52,7 +54,7 @@ class NoteNavBar: UIView {
         
         let backButtonImage = UIImage(imageLiteralResourceName: "arrow").withRenderingMode(.alwaysTemplate)
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.tintColor = .gray
+        backButton.tintColor = .colour5
         backButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi)
         backButton.setImage(backButtonImage, for: .normal)
         
@@ -64,7 +66,7 @@ class NoteNavBar: UIView {
         
         editTitleDescriptionButton.translatesAutoresizingMaskIntoConstraints = false
         editTitleDescriptionButton.setImage(#imageLiteral(resourceName: "edit").withRenderingMode(.alwaysTemplate), for: .normal)
-        editTitleDescriptionButton.tintColor = .gray
+        editTitleDescriptionButton.tintColor = .colour5
         
         addSubview(editTitleDescriptionButton)
         editTitleDescriptionButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
