@@ -23,14 +23,17 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
     fileprivate let tableView = UITableView()
     fileprivate let navBar = HomeNavBar()
     
-    fileprivate var notes = [Note]()
+    fileprivate var notes : [Note]!
     fileprivate let reuseIdentifier = "customCell"
+    
+    fileprivate let userDefaults = UserDefaults.standard
 
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        seupUI()
+        loadUserDefaults()
+        setupUI()
     }
     
     // MARK: - Table View Methods
@@ -75,7 +78,7 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! Customcell
             cell.titleLabel.text = notes[indexPath.row].title
-            cell.descriptionLabel.text = notes[indexPath.row].description
+            cell.descriptionLabel.text = notes[indexPath.row].subTitle
         return cell
     }
     
@@ -93,7 +96,7 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
     
     // MARK: - Handlers
     
-    fileprivate func seupUI() {
+    fileprivate func setupUI() {
         
         view.backgroundColor = .white
         let safeArea = view.safeAreaLayoutGuide
@@ -106,7 +109,7 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
         navBar.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
         navBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
         navBar.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor).isActive = true
-        navBar.heightAnchor.constraint(equalToConstant: 44).isActive = true
+        navBar.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.topAnchor.constraint(equalTo: navBar.bottomAnchor).isActive = true
@@ -130,6 +133,7 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
             for i in indexPath.row..<self.notes.count {
                 self.notes[i].noteIndex -= 1
             }
+            self.updateUserDefaults()
             completion(true)
         }
         action.backgroundColor = .red
@@ -139,15 +143,33 @@ class NotesHomeController: UIViewController, UITableViewDelegate, UITableViewDat
     @objc fileprivate func handlePresentForm() {
         
         let controller = NoteFormController()
-        let form = NewNoteForm(headerText: "Add New Note", buttonText: "Add Note")
+        let form = NewNoteForm(headerText: "Add New Note")
         controller.form = form
         controller.delegate = self
-        controller.note = Note(title: nil, description: nil, content: nil, noteIndex: notes.count)
+        controller.note = Note(title: nil, subTitle: nil, content: nil, noteIndex: notes.count)
         controller.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         present(controller, animated: true, completion: nil)
         
     }
-
+    
+    fileprivate func updateUserDefaults() {
+        if let savedNotes = try? NSKeyedArchiver.archivedData(withRootObject: notes ?? [Note](), requiringSecureCoding: false) {
+            userDefaults.set(savedNotes, forKey: "notes")
+        }
+    }
+    
+    fileprivate func loadUserDefaults() {
+        if let savedNotes = userDefaults.object(forKey: "notes") as? Data {
+            if let decodedNotes = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedNotes) as? [Note] {
+                notes = decodedNotes
+            } else {
+                notes = [Note]()
+            }
+        } else {
+            notes = [Note]()
+        }
+    }
+    
 }
 
 extension NotesHomeController : NewEditNoteDelegate, UpdateNotesDelegate {
@@ -155,14 +177,16 @@ extension NotesHomeController : NewEditNoteDelegate, UpdateNotesDelegate {
     func updateNote(note: Note) {
         guard let cell = tableView.cellForRow(at: [0, note.noteIndex]) as? Customcell else {return}
         cell.titleLabel.text = note.title
-        cell.descriptionLabel.text = note.description
+        cell.descriptionLabel.text = note.subTitle
         notes[note.noteIndex] = note
+        updateUserDefaults()
     }
     
     func newEditNote(newNote: Note) {
         notes.append(newNote)
         tableView.insertRows(at: [[0, notes.count-1]], with: .automatic)
         tableView.scrollToRow(at: [0, notes.count-1], at: .top, animated: true)
+        updateUserDefaults()
     }
 
 }

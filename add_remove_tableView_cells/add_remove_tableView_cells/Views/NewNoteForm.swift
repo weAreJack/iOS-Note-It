@@ -59,18 +59,17 @@ class NewNoteForm : UIView, UITextFieldDelegate {
     
     let addNoteButton : UIButton = {
         let button = UIButton()
-        button.setTitle("Add Note", for: .normal)
+        button.setTitle("Done", for: .normal)
         button.setTitleColor(.black, for: .normal)
         return button
     }()
     
     // MARK: - Init
     
-    init(headerText: String, buttonText: String) {
+    init(headerText: String) {
         let frame = CGRect()
         super.init(frame: frame)
         headerLabel.text = headerText
-        addNoteButton.setTitle(buttonText, for: .normal)
         setupUI()
     }
     
@@ -97,7 +96,7 @@ class NewNoteForm : UIView, UITextFieldDelegate {
         backgroundColor = UIColor(r: 240, g: 240, b: 240)
         clipsToBounds = true
         layer.cornerRadius = 10
-        layer.borderColor = UIColor.darkGray.cgColor
+        layer.borderColor = UIColor(r: 240, g: 240, b: 240).cgColor
         layer.borderWidth = 2
         
         let titleFieldView = UIView()

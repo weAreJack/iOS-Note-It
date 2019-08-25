@@ -20,7 +20,7 @@ class NoteController : UIViewController, UITextViewDelegate {
         didSet {
             
             navBar.noteTitleLabel.text = note.title
-            navBar.noteDescriptionLabel.text = note.description
+            navBar.noteDescriptionLabel.text = note.subTitle
             contentTextView.text = note.content
             noteIndex = note.noteIndex
             
@@ -37,6 +37,9 @@ class NoteController : UIViewController, UITextViewDelegate {
         
         return tv
     }()
+    
+    var contentTextViewBottomConstraint : NSLayoutConstraint?
+    var contentTextViewKeyboardConstraint : NSLayoutConstraint?
     
     // MARK: - ViewDidLoad
     
@@ -77,6 +80,7 @@ class NoteController : UIViewController, UITextViewDelegate {
         contentTextView.font = .systemFont(ofSize: 18)
         contentTextView.dropShadow()
         contentTextView.delegate = self
+        contentTextView.keyboardDismissMode = .interactive
         
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(handleDissmissKeyboard))
         swipeGesture.direction = .down
@@ -85,7 +89,8 @@ class NoteController : UIViewController, UITextViewDelegate {
         contentTextView.topAnchor.constraint(equalTo: navBar.bottomAnchor, constant: 8).isActive = true
         contentTextView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 8).isActive = true
         contentTextView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -8).isActive = true
-        contentTextView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -8).isActive = true
+        contentTextViewBottomConstraint = contentTextView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor, constant: -8)
+        contentTextViewBottomConstraint?.isActive = true
         
         navBar.topAnchor.constraint(equalTo: safeArea.topAnchor).isActive = true
         navBar.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor).isActive = true
@@ -102,7 +107,7 @@ class NoteController : UIViewController, UITextViewDelegate {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
+
     fileprivate func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -111,7 +116,7 @@ class NoteController : UIViewController, UITextViewDelegate {
     @objc fileprivate func handlePresentForm() {
         
         let controller = NoteFormController()
-        let form = NewNoteForm(headerText: "Edit Note Headings", buttonText: "Edit Note")
+        let form = NewNoteForm(headerText: "Edit Note Headings")
         controller.form = form
         controller.delegate = self
         controller.note = note
@@ -131,15 +136,20 @@ class NoteController : UIViewController, UITextViewDelegate {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
+            contentTextViewKeyboardConstraint = contentTextView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -(keyboardSize.height+8))
+            contentTextViewBottomConstraint?.isActive = false
+            contentTextViewKeyboardConstraint?.isActive = true
             UIView.animate(withDuration: 0.5) {
-                self.view.transform = CGAffineTransform(translationX: 0, y: -keyboardSize.height)
+                self.view.layoutIfNeeded()
             }
         }
     }
-    
+
     @objc func keyboardWillHide(notification: NSNotification) {
+        contentTextViewBottomConstraint?.isActive = true
+        contentTextViewKeyboardConstraint?.isActive = false
         UIView.animate(withDuration: 0.5) {
-            self.view.transform = .identity
+            self.view.layoutIfNeeded()
         }
     }
     

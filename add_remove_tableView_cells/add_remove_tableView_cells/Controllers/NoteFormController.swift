@@ -43,7 +43,7 @@ class NoteFormController : UIViewController {
         form.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         form.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         form.titleField.text = note.title
-        form.descriptionField.text = note.description
+        form.descriptionField.text = note.subTitle
         
         form.titleField.addTarget(self, action: #selector(handleTitleFieldEditing), for: .editingChanged)
         form.descriptionField.addTarget(self, action: #selector(handleDescriptionFieldEditing), for: .editingChanged)
@@ -64,7 +64,7 @@ class NoteFormController : UIViewController {
     }
     
     @objc fileprivate func handleDescriptionFieldEditing(textField: UITextField) {
-        note.description = textField.text
+        note.subTitle = textField.text
     }
     
     @objc fileprivate func handleSubmitForm() {
