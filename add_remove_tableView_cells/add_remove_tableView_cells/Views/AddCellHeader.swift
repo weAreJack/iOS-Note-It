@@ -12,7 +12,7 @@ class AddCellHeader : UIView {
     
     // MARK: - Properties
     
-    fileprivate let button : UIButton = {
+    let button : UIButton = {
         let button = UIButton()
         button.setTitle("Add New Note", for: .normal)
         button.setTitleColor(.colour2, for: .normal)
