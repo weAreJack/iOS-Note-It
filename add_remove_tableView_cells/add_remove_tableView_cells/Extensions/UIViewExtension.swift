@@ -8,12 +8,9 @@
 
 import UIKit
 
-import UIKit
-
 extension UIView {
     
     func dropShadow(scale: Bool = true) {
-        
         layer.masksToBounds = false
         layer.shadowColor = UIColor.gray.cgColor
         layer.shadowOpacity = 0.5
@@ -21,18 +18,15 @@ extension UIView {
         layer.shadowRadius = 2
         layer.shouldRasterize = true
         layer.rasterizationScale = scale ? UIScreen.main.scale : 1
-        
     }
     
     func fillSuperview() {
-        
         guard let superView = superview else {return}
         translatesAutoresizingMaskIntoConstraints = false
         self.topAnchor.constraint(equalTo: superView.topAnchor).isActive = true
         self.leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true
         self.trailingAnchor.constraint(equalTo: superView.trailingAnchor).isActive = true
         self.bottomAnchor.constraint(equalTo: superView.bottomAnchor).isActive = true
-        
     }
     
 }

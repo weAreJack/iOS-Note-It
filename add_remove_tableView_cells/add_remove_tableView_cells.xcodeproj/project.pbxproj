@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0957412230DE6B700743BCF /* NewNoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957411230DE6B700743BCF /* NewNoteForm.swift */; };
+		A0414AB9231708E3002DE53C /* NotesHomeController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AB8231708E2002DE53C /* NotesHomeController+TableView.swift */; };
+		A0414ABB23170981002DE53C /* NotesHomeController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414ABA23170981002DE53C /* NotesHomeController+Handlers.swift */; };
+		A0414ABD231709FB002DE53C /* NoteFormController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414ABC231709FB002DE53C /* NoteFormController+Handlers.swift */; };
+		A0414ABF23170A5F002DE53C /* NoteController+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414ABE23170A5F002DE53C /* NoteController+Handlers.swift */; };
+		A0414AC123170C00002DE53C /* NoteTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AC023170C00002DE53C /* NoteTextView.swift */; };
+		A0414AC323170ED8002DE53C /* NoteForm+Handlers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AC223170ED8002DE53C /* NoteForm+Handlers.swift */; };
+		A0414AC7231725EB002DE53C /* FieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0414AC6231725EB002DE53C /* FieldView.swift */; };
+		A0957412230DE6B700743BCF /* NoteForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957411230DE6B700743BCF /* NoteForm.swift */; };
 		A0957414230E8BAF00743BCF /* HomeNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957413230E8BAF00743BCF /* HomeNavBar.swift */; };
 		A0957416230E8CB300743BCF /* NoteNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957415230E8CB300743BCF /* NoteNavBar.swift */; };
 		A0957419230E8D1700743BCF /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0957418230E8D1700743BCF /* UIViewExtension.swift */; };
@@ -43,7 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		A0957411230DE6B700743BCF /* NewNoteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewNoteForm.swift; sourceTree = "<group>"; };
+		A0414AB8231708E2002DE53C /* NotesHomeController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesHomeController+TableView.swift"; sourceTree = "<group>"; };
+		A0414ABA23170981002DE53C /* NotesHomeController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotesHomeController+Handlers.swift"; sourceTree = "<group>"; };
+		A0414ABC231709FB002DE53C /* NoteFormController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteFormController+Handlers.swift"; sourceTree = "<group>"; };
+		A0414ABE23170A5F002DE53C /* NoteController+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteController+Handlers.swift"; sourceTree = "<group>"; };
+		A0414AC023170C00002DE53C /* NoteTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTextView.swift; sourceTree = "<group>"; };
+		A0414AC223170ED8002DE53C /* NoteForm+Handlers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NoteForm+Handlers.swift"; sourceTree = "<group>"; };
+		A0414AC6231725EB002DE53C /* FieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldView.swift; sourceTree = "<group>"; };
+		A0957411230DE6B700743BCF /* NoteForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteForm.swift; sourceTree = "<group>"; };
 		A0957413230E8BAF00743BCF /* HomeNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavBar.swift; sourceTree = "<group>"; };
 		A0957415230E8CB300743BCF /* NoteNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteNavBar.swift; sourceTree = "<group>"; };
 		A0957418230E8D1700743BCF /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -166,8 +180,12 @@
 			isa = PBXGroup;
 			children = (
 				A0BA1E45230C9EFF00F32F53 /* NotesHomeController.swift */,
+				A0414ABA23170981002DE53C /* NotesHomeController+Handlers.swift */,
+				A0414AB8231708E2002DE53C /* NotesHomeController+TableView.swift */,
 				A095741C230E919F00743BCF /* NoteFormController.swift */,
+				A0414ABC231709FB002DE53C /* NoteFormController+Handlers.swift */,
 				A095741E230E91A900743BCF /* NoteController.swift */,
+				A0414ABE23170A5F002DE53C /* NoteController+Handlers.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -177,8 +195,11 @@
 			children = (
 				A0BA1E73230CA22C00F32F53 /* CustomCell.swift */,
 				A0BA1E75230CA9A300F32F53 /* AddCellHeader.swift */,
-				A0957411230DE6B700743BCF /* NewNoteForm.swift */,
+				A0957411230DE6B700743BCF /* NoteForm.swift */,
+				A0414AC223170ED8002DE53C /* NoteForm+Handlers.swift */,
 				A0957413230E8BAF00743BCF /* HomeNavBar.swift */,
+				A0414AC6231725EB002DE53C /* FieldView.swift */,
+				A0414AC023170C00002DE53C /* NoteTextView.swift */,
 				A0957415230E8CB300743BCF /* NoteNavBar.swift */,
 			);
 			path = Views;
@@ -313,14 +334,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0414ABF23170A5F002DE53C /* NoteController+Handlers.swift in Sources */,
 				A095741D230E919F00743BCF /* NoteFormController.swift in Sources */,
+				A0414ABB23170981002DE53C /* NotesHomeController+Handlers.swift in Sources */,
+				A0414AC323170ED8002DE53C /* NoteForm+Handlers.swift in Sources */,
+				A0414ABD231709FB002DE53C /* NoteFormController+Handlers.swift in Sources */,
 				A0957414230E8BAF00743BCF /* HomeNavBar.swift in Sources */,
 				A0BA1E76230CA9A300F32F53 /* AddCellHeader.swift in Sources */,
 				A095741B230E8FCA00743BCF /* UIViewControllerExtension.swift in Sources */,
-				A0957412230DE6B700743BCF /* NewNoteForm.swift in Sources */,
+				A0414AC123170C00002DE53C /* NoteTextView.swift in Sources */,
+				A0414AC7231725EB002DE53C /* FieldView.swift in Sources */,
+				A0957412230DE6B700743BCF /* NoteForm.swift in Sources */,
 				A0957424230EAB4D00743BCF /* UIColorEntension.swift in Sources */,
 				A0BA1E46230C9EFF00F32F53 /* NotesHomeController.swift in Sources */,
 				A095741F230E91A900743BCF /* NoteController.swift in Sources */,
+				A0414AB9231708E3002DE53C /* NotesHomeController+TableView.swift in Sources */,
 				A0957416230E8CB300743BCF /* NoteNavBar.swift in Sources */,
 				A0BA1E74230CA22C00F32F53 /* CustomCell.swift in Sources */,
 				A0957419230E8D1700743BCF /* UIViewExtension.swift in Sources */,

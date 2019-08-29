@@ -11,7 +11,6 @@ import UIKit
 extension UIViewController {
     
     func addStatusBarCover(colour: UIColor) {
-        
         let statusBarCover = UIView()
         statusBarCover.backgroundColor = colour
         statusBarCover.translatesAutoresizingMaskIntoConstraints = false
@@ -21,7 +20,11 @@ extension UIViewController {
         statusBarCover.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         statusBarCover.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         statusBarCover.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        
+    }
+    
+    func deregisterFromKeyboardNotifications(){
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
 }

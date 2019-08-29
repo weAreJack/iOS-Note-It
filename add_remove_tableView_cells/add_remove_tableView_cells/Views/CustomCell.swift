@@ -12,16 +12,23 @@ class Customcell : UITableViewCell {
     
     // MARK: - Properties
     
-    let toolTip = UIImageView(image: #imageLiteral(resourceName: "notes").withRenderingMode(.alwaysTemplate))
-    let arrowImage = UIImageView(image: #imageLiteral(resourceName: "arrow").withRenderingMode(.alwaysTemplate))
+    var note : Note? {
+        didSet {
+            titleLabel.text = note?.title
+            subTitleLabel.text = note?.subTitle
+        }
+    }
     
-    let titleLabel : UILabel = {
+    fileprivate let toolTip = UIImageView(image: #imageLiteral(resourceName: "notes").withRenderingMode(.alwaysTemplate))
+    fileprivate let arrowImage = UIImageView(image: #imageLiteral(resourceName: "arrow").withRenderingMode(.alwaysTemplate))
+    
+    fileprivate let titleLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18)
         return label
     }()
     
-    let descriptionLabel : UILabel = {
+    fileprivate let subTitleLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 12)
         label.textColor = .colour1
@@ -45,7 +52,7 @@ class Customcell : UITableViewCell {
         
         selectionStyle = .none
         
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, subTitleLabel])
         stackView.axis = .vertical
         stackView.spacing = 8
         

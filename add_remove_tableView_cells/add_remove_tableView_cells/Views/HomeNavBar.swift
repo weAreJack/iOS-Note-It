@@ -12,8 +12,7 @@ class HomeNavBar: UIView {
     
     // MARK: - Properties
     
-    let notesIcon = UIImageView(image: #imageLiteral(resourceName: "notes").withRenderingMode(.alwaysTemplate))
-    let notesLabel = UILabel()
+    fileprivate let icon = UIImageView(image: #imageLiteral(resourceName: "notes"))
     
     // MARK: - Init
     
@@ -34,23 +33,12 @@ class HomeNavBar: UIView {
         backgroundColor = .white
         dropShadow()
         
-        let stackView = UIStackView(arrangedSubviews: [notesIcon, notesLabel])
-        stackView.axis = .horizontal
-        stackView.spacing = 8
-        
-        notesIcon.tintColor = .colour1
-        notesIcon.heightAnchor.constraint(equalToConstant: 36).isActive = true
-        notesIcon.widthAnchor.constraint(equalToConstant: 36).isActive = true
-        
-        notesLabel.font = .boldSystemFont(ofSize: 20)
-        notesLabel.text = "Notes"
-        notesLabel.textColor = .colour1
-        
-        addSubview(stackView)
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        stackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-
+        addSubview(icon)
+        icon.translatesAutoresizingMaskIntoConstraints = false
+        icon.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        icon.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        icon.heightAnchor.constraint(equalToConstant: 36).isActive = true
+        icon.widthAnchor.constraint(equalToConstant: 36).isActive = true
         
     }
     

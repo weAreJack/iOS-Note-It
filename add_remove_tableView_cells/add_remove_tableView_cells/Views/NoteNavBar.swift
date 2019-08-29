@@ -12,8 +12,15 @@ class NoteNavBar: UIView {
     
     // MARK: - Properties
     
-    let noteTitleLabel = UILabel()
-    let noteDescriptionLabel = UILabel()
+    var note : Note? {
+        didSet {
+            titleLabel.text = note?.title
+            descriptionLabel.text = note?.subTitle
+        }
+    }
+    
+    let titleLabel = setupLabel(font: .boldSystemFont(ofSize: 20))
+    let descriptionLabel = setupLabel(font: .systemFont(ofSize: 18))
     let backButton = UIButton(type: .system)
     let editTitleDescriptionButton = UIButton(type: .system)
     
@@ -31,21 +38,13 @@ class NoteNavBar: UIView {
     // MARK: - Methods
     
     fileprivate func setupUI() {
-        
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .white
         dropShadow()
         
-        let stackView = UIStackView(arrangedSubviews: [noteTitleLabel, noteDescriptionLabel])
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
         stackView.axis = .vertical
         stackView.spacing = 8
-        
-        noteTitleLabel.font = .boldSystemFont(ofSize: 20)
-        noteTitleLabel.textColor = .colour1
-        noteTitleLabel.textAlignment = .center
-        noteDescriptionLabel.font = .systemFont(ofSize: 16)
-        noteDescriptionLabel.textColor = .colour1
-        noteDescriptionLabel.textAlignment = .center
         
         addSubview(stackView)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,7 +72,14 @@ class NoteNavBar: UIView {
         editTitleDescriptionButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
         editTitleDescriptionButton.heightAnchor.constraint(equalToConstant: 26).isActive = true
         editTitleDescriptionButton.widthAnchor.constraint(equalToConstant: 26).isActive = true
-        
+    }
+    
+    static func setupLabel(font: UIFont) -> UILabel {
+        let label = UILabel()
+        label.font = font
+        label.textColor = .colour1
+        label.textAlignment = .center
+        return label
     }
     
 }
