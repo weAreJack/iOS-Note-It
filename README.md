@@ -1,6 +1,6 @@
 
 
-# Note it! - A notes app built using a table view.
+# Note it! - A notes app built using UItableView.
 Note it! allows users to easily create, edit, store and delete notes. 
 
 This project centers around managing a UITableview to display a number of editable cells, each representing a note. Tap on the cell to open up the note and edit the headings or content of the note.
